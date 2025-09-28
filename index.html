@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>50% OFF en KOOWEXA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: #212529;
+    }
+
+    body::before {
+      content: "KOOWEXA";
+      position: absolute;
+      font-size: 12rem;
+      font-weight: 900;
+      color: rgba(52, 152, 219, 0.04);
+      z-index: 0;
+      transform: rotate(-30deg);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .promo-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      width: 92%;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .promo-card h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: #e74c3c;
+      font-weight: 700;
+    }
+
+    .promo-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: #495057;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .time-box {
+      background: #3498db;
+      color: white;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .time-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .time-value {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .time-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2ecc71;
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #27ae60;
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(46, 204, 113, 0.5);
+    }
+
+    .expired-message {
+      display: none;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      width: 92%;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .expired-message h2 {
+      color: #e74c3c;
+      margin-bottom: 16px;
+    }
+
+    .expired-message p {
+      color: #6c757d;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="promo-card" id="active-promo">
+    <h1>¡50% de Descuento en KOOWEXA!</h1>
+    <p>Obtén tu presencia virtual con un <strong>50% de descuento</strong>. Ideal para emprendedores en Cuba: sin experiencia técnica, con hospedaje incluido y optimizado para conexiones lentas.</p>
+
+    <div class="countdown" id="countdown">
+      <div class="time-box"><span class="time-value" id="days">00</span><span class="time-label">Días</span></div>
+      <div class="time-box"><span class="time-value" id="hours">00</span><span class="time-label">Horas</span></div>
+      <div class="time-box"><span class="time-value" id="minutes">00</span><span class="time-label">Min</span></div>
+      <div class="time-box"><span class="time-value" id="seconds">00</span><span class="time-label">Seg</span></div>
+    </div>
+
+    <a href="https://koowexa.github.io/oficial/" class="cta-button" target="_blank" rel="noopener">Aprovechar Ahora</a>
+  </div>
+
+  <div class="expired-message" id="expired-promo">
+    <h2>Promoción Finalizada</h2>
+    <p>La oferta del 50% de descuento concluyó el 5 de octubre de 2024. Gracias por tu interés.</p>
+  </div>
+
+  <script>
+    const expiry = new Date('2025-10-05T23:59:59').getTime();
+    const now = new Date().getTime();
+    const active = document.getElementById('active-promo');
+    const expired = document.getElementById('expired-promo');
+
+    if (now >= expiry) {
+      active.style.display = 'none';
+      expired.style.display = 'block';
+    } else {
+      const update = () => {
+        const current = new Date().getTime();
+        const diff = expiry - current;
+
+        if (diff <= 0) {
+          active.style.display = 'none';
+          expired.style.display = 'block';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      };
+
+      update();
+      setInterval(update, 1000);
+    }
+  </script>
+</body>
+</html>
