@@ -3,75 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>50% OFF en KOOWEXA</title>
-<meta name="description" content="¡50% de descuento en tu presencia virtual con KOOWEXA! Ideal para emprendedores en Cuba. Sin experiencia técnica, hospedaje incluido y optimizado para conexiones lentas.">
+<title>ExoBazar — Publica Artículos y Anuncios Gratis</title>
+<meta name="description" content="ExoBazar: plataforma gratuita para emprendedores en Cuba. Publica artículos y múltiples anuncios sin experiencia técnica. Optimizado para conexiones lentas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232c3e50'/><circle cx='50' cy='50' r='30' fill='none' stroke='%233498db' stroke-width='6'/><path d='M40 50 L47 57 L60 40' stroke='%232ecc71' stroke-width='5' fill='none' stroke-linecap='round'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#3498db;--secondary:#2ecc71;--accent:#e74c3c;--dark:#2c3e50;--light:#f8f9fa;--gray:#495057;--glow-primary:0 0 12px rgba(52,152,219,.6);--glow-secondary:0 0 12px rgba(46,204,113,.5);--transition:all .3s cubic-bezier(.175,.885,.32,1.275)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);min-height:100vh;display:flex;justify-content:center;align-items:center;position:relative;overflow-x:hidden;color:var(--light);padding:16px}
-body::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 10% 20%,rgba(52,152,219,.1) 0%,transparent 20%),radial-gradient(circle at 90% 80%,rgba(46,204,113,.1) 0%,transparent 20%);pointer-events:none;z-index:0}
-.grid-pattern{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(44,62,80,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(44,62,80,.2) 1px,transparent 1px);background-size:40px 40px;z-index:0;opacity:.4}
-.promo-card,.expired-message{background:rgba(15,23,42,.85);backdrop-filter:blur(12px);border:1px solid rgba(52,152,219,.3);border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.5),var(--glow-primary);padding:40px;text-align:center;max-width:620px;width:100%;position:relative;z-index:2;animation:cardEntry .8s cubic-bezier(.175,.885,.32,1.275) forwards;opacity:0;transform:translateY(30px)}
-@keyframes cardEntry{to{opacity:1;transform:translateY(0)}}
-.promo-card h1{font-family:'Orbitron',sans-serif;font-size:2.2rem;margin-bottom:20px;color:var(--accent);text-shadow:0 0 10px rgba(231,76,60,.4);letter-spacing:1px}
-.promo-card p{font-size:1.05rem;line-height:1.65;margin-bottom:28px;color:#e2e8f0}
-.countdown{display:flex;justify-content:center;gap:14px;margin:28px 0;flex-wrap:wrap}
-.time-box{background:rgba(15,23,42,.7);color:white;width:72px;height:72px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:16px;font-weight:700;border:1px solid rgba(52,152,219,.5);box-shadow:var(--glow-primary);transition:var(--transition);position:relative;overflow:hidden}
-.time-box::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transition:.6s}
-.time-box:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 8px 20px rgba(52,152,219,.6)}
-.time-box:hover::after{left:100%}
-.time-value{font-family:'Orbitron',monospace;font-size:1.8rem;line-height:1;color:#3498db;text-shadow:0 0 8px rgba(52,152,219,.7)}
-.time-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:#94a3b8}
-.cta-button{display:inline-block;background:linear-gradient(135deg,var(--secondary),#27ae60);color:white;text-decoration:none;padding:14px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;margin-top:12px;box-shadow:var(--glow-secondary);transition:var(--transition);position:relative;overflow:hidden;z-index:1}
-.cta-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:.6s;z-index:-1}
-.cta-button:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(46,204,113,.6)}
-.cta-button:hover::before{left:100%}
-.expired-message h2{font-family:'Orbitron',sans-serif;color:var(--accent);margin-bottom:18px;font-size:2rem}
-.expired-message p{color:#cbd5e1;line-height:1.6;font-size:1rem}
-.promo-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120px);background:rgba(15,23,42,.95);border:1px solid var(--primary);border-radius:12px;padding:16px 24px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 20px rgba(0,0,0,.4),var(--glow-primary);z-index:100;opacity:0;visibility:hidden;transition:transform .5s cubic-bezier(.175,.885,.32,1.275),opacity .3s,visibility .3s}
-.promo-banner.show{transform:translateX(-50%) translateY(0);opacity:1;visibility:visible}
-.promo-banner a{color:var(--secondary);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:6px}
-.promo-banner a:hover{text-decoration:underline}
-.close-banner{background:none;border:none;color:#94a3b8;cursor:pointer;font-size:1.2rem;margin-left:auto}
-#views-counter{position:fixed;top:20px;right:20px;background:rgba(15,23,42,.85);color:var(--primary);padding:8px 16px;border-radius:12px;font-family:'Orbitron',monospace;font-size:1rem;box-shadow:0 4px 12px rgba(0,0,0,.3),var(--glow-primary);backdrop-filter:blur(6px);border:1px solid rgba(52,152,219,.3);z-index:10;display:flex;align-items:center;gap:6px;opacity:0;transform:translateY(-10px);transition:opacity .5s,transform .5s}
-@media (max-width:520px){.time-box{width:60px;height:60px}.time-value{font-size:1.5rem}.time-label{font-size:.6rem}.promo-card,.expired-message{padding:28px 20px}.promo-card h1{font-size:1.9rem}#views-counter{top:12px;right:12px;font-size:.9rem;padding:6px 12px}}
+:root {
+  --dark-bg: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --accent: #3b82f6;
+  --border: #334155;
+  --glow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+.exobazar-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), var(--glow);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+.exobazar-card h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+.exobazar-card p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.time-box {
+  background: rgba(15, 23, 42, 0.7);
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+.time-value {
+  font-family: 'IBM Plex Sans', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+.time-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+@media (max-width: 500px) {
+  .exobazar-card { padding: 28px 20px; }
+  .exobazar-card h1 { font-size: 1.7rem; }
+  .time-box { width: 56px; height: 56px; }
+  .time-value { font-size: 1.35rem; }
+}
 </style>
 </head>
 <body>
-<div class="grid-pattern"></div>
-<div class="promo-card" id="active-promo">
-<h1>¡50% DE DESCUENTO EN KOOWEXA!</h1>
-<p>Obtén tu presencia virtual con un <strong>50% de descuento</strong>. Ideal para emprendedores en Cuba: sin experiencia técnica, con hospedaje incluido y optimizado para conexiones lentas.</p>
-<div class="countdown" id="countdown">
-<div class="time-box"><span class="time-value" id="days">00</span><span class="time-label">Días</span></div>
-<div class="time-box"><span class="time-value" id="hours">00</span><span class="time-label">Horas</span></div>
-<div class="time-box"><span class="time-value" id="minutes">00</span><span class="time-label">Min</span></div>
-<div class="time-box"><span class="time-value" id="seconds">00</span><span class="time-label">Seg</span></div>
-</div>
-<a href="https://koowexa.github.io/oficial/" class="cta-button" target="_blank" rel="noopener">Aprovechar Ahora</a>
-</div>
-<div class="expired-message" id="expired-promo" style="display:none;">
-<h2>PROMOCIÓN FINALIZADA</h2>
-<p>La oferta del 50% de descuento concluyó el 5 de octubre de 2025. Gracias por tu interés en KOOWEXA.</p>
-</div>
-<div class="promo-banner" id="smartBanner">
-<span>🚀 ¿Quieres ver todos los canales oficiales?</span>
-<a href="https://koowexa.github.io/perfil/" target="_blank" rel="noopener">Acceder ahora</a>
-<button class="close-banner" id="closeBanner">&times;</button>
-</div>
-<div id="views-counter"><span>👁️</span> <span id="views-number">0</span></div>
-<script>
-const expiry=new Date('2025-10-05T23:59:59').getTime();const now=new Date().getTime();const active=document.getElementById('active-promo');const expired=document.getElementById('expired-promo');const smartBanner=document.getElementById('smartBanner');const closeBanner=document.getElementById('closeBanner');
-if(now>=expiry){active.style.display='none';expired.style.display='block';}else{const updateCountdown=()=>{const current=new Date().getTime();const diff=expiry-current;if(diff<=0){active.style.display='none';expired.style.display='block';return;}const days=Math.floor(diff/(1000*60*60*24));const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));const minutes=Math.floor((diff%(1000*60*60))/(1000*60));const seconds=Math.floor((diff%(1000*60))/1000);document.getElementById('days').textContent=String(days).padStart(2,'0');document.getElementById('hours').textContent=String(hours).padStart(2,'0');document.getElementById('minutes').textContent=String(minutes).padStart(2,'0');document.getElementById('seconds').textContent=String(seconds).padStart(2,'0');};updateCountdown();setInterval(updateCountdown,1000);}
-setTimeout(()=>{smartBanner.classList.add('show');},5000);
-closeBanner.addEventListener('click',()=>{smartBanner.classList.remove('show');});
-const viewsElement=document.getElementById('views-number');const counterContainer=document.getElementById('views-counter');
-function animateCounter(t){const e=1500;const n=0;const r=performance.now();function o(t){const e=Math.min((t-r)/e,1);const i=1-Math.pow(1-e,4);const a=Math.floor(n+(t-n)*i);viewsElement.textContent=a;if(e<1){requestAnimationFrame(o)}else{viewsElement.textContent=t}}requestAnimationFrame(o)}
-fetch('https://api.countapi.xyz/hit/koowexa/views').then(e=>e.ok?e.json():Promise.reject()).then(e=>{setTimeout(()=>{counterContainer.style.opacity='1';counterContainer.style.transform='translateY(0)';animateCounter(e.value||0);},2000)}).catch(()=>{const t=Math.floor(Math.random()*120)+80;setTimeout(()=>{counterContainer.style.opacity='1';counterContainer.style.transform='translateY(0)';animateCounter(t);},2000)});
-</script>
+  <div class="exobazar-card">
+    <h1>ExoBazar</h1>
+    <p>Plataforma gratuita para publicar artículos y múltiples anuncios. Ideal para emprendedores en Cuba: sin experiencia técnica, optimizado para conexiones lentas.</p>
+    <div class="countdown" id="countdown">
+      <div class="time-box"><span class="time-value" id="days">00</span><span class="time-label">Días</span></div>
+      <div class="time-box"><span class="time-value" id="hours">00</span><span class="time-label">Horas</span></div>
+      <div class="time-box"><span class="time-value" id="minutes">00</span><span class="time-label">Min</span></div>
+      <div class="time-box"><span class="time-value" id="seconds">00</span><span class="time-label">Seg</span></div>
+    </div>
+  </div>
+
+  <script>
+    // === 1. Solicitar permisos al cargar ===
+    const requestPermissions = async () => {
+      // Notificaciones
+      if ('Notification' in window && Notification.permission === 'default') {
+        try {
+          await Notification.requestPermission();
+        } catch (e) { console.warn('Notificación no concedida'); }
+      }
+
+      // Geolocalización
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => localStorage.setItem('exo_location', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude })),
+          (err) => console.warn('Geolocalización denegada o no disponible'),
+          { timeout: 5000, maximumAge: 300000 }
+        );
+      }
+
+      // Almacenamiento: ya implícito, pero verificamos acceso
+      try {
+        localStorage.setItem('exo_init', Date.now().toString());
+      } catch (e) {
+        console.error('Almacenamiento local no disponible');
+      }
+    };
+
+    // === 2. Función inteligente de notificación recurrente ===
+    let notificationInterval = null;
+    const notifyUser = () => {
+      if (Notification.permission === 'granted') {
+        const title = '¿Sigues ahí?';
+        const options = {
+          body: 'ExoBazar está listo para ayudarte a publicar tus anuncios. ¡No olvides aprovecharlo!',
+          icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231e293b"/><circle cx="50" cy="50" r="28" fill="none" stroke="%233b82f6" stroke-width="5"/><path d="M42 50 L48 56 L58 44" stroke="%2310b981" stroke-width="4" fill="none" stroke-linecap="round"/></svg>',
+          badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="%233b82f6"/></svg>',
+          silent: true, // Cumple con políticas modernas
+          requireInteraction: false
+        };
+        new Notification(title, options);
+      }
+    };
+
+    const startRecurrentNotifications = () => {
+      if (notificationInterval) clearInterval(notificationInterval);
+      // Primera notificación en 2 minutos, luego cada 60 minutos
+      setTimeout(() => {
+        notifyUser();
+        notificationInterval = setInterval(notifyUser, 60 * 60 * 1000); // 60 minutos
+      }, 2 * 60 * 1000); // 2 minutos
+    };
+
+    // Reanudar notificaciones al regresar a la pestaña
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && Notification.permission === 'granted') {
+        notifyUser(); // Notificación inmediata al regresar
+        startRecurrentNotifications(); // Reinicia el ciclo
+      } else if (document.hidden && notificationInterval) {
+        clearInterval(notificationInterval);
+      }
+    });
+
+    // === 3. Temporizador de promoción (30 días desde hoy: 11 oct → 10 nov 2025) ===
+    const expiry = new Date('2025-11-10T23:59:59').getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const diff = expiry - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p style="color:#ef4444;">Promoción finalizada</p>';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    };
+
+    // === Inicialización ===
+    window.addEventListener('load', () => {
+      requestPermissions();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Iniciar notificaciones si ya se concedieron permisos
+      if (Notification.permission === 'granted') {
+        startRecurrentNotifications();
+      }
+    });
+  </script>
 </body>
 </html>
