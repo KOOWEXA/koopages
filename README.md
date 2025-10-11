@@ -1,6 +1,6 @@
 # 📣 KOOPROME - Plataforma de Promoción y Anuncios
 
-**es una plataforma dinámica y minimalista diseñada para promocionar servicios, gestionar anuncios y facilitar la interacción directa con los usuarios mediante integraciones inteligentes y una interfaz profesional.
+Es una plataforma dinámica y minimalista diseñada para promocionar servicios, gestionar anuncios y facilitar la interacción directa con los usuarios.
 
 ---
 
