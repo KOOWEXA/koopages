@@ -25,6 +25,6 @@ Es una plataforma dinámica y minimalista diseñada para promocionar servicios, 
 - ▶️ **YouTube**: [KOOWEXA en YouTube](https://youtube.com/@koowexa?si=QCFg-JY-QJLQe2sZ)
 - 🐦 **X (Twitter)**: [@koowexa](https://x.com/koowexa?t=rW2wTyGXhZT-wShWyU2ROQ&s=09)
 - 💬 **WhatsApp Channel**: [KOOWEXA en WhatsApp](https://whatsapp.com/channel/0029VbB6FJk5q08fW25JNN3w)
-- 📡 **Telegram**: [@KOOWEX](https://t.me/KOOWEXA)
+- 📡 **Telegram**: [@KOOWEXA](https://t.me/KOOWEXA)
 
 ---
