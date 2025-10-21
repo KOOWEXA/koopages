@@ -2,48 +2,188 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KooProme</title>
+  <meta name="description" content="Accede a TV+, la nueva plataforma de entretenimiento de KooProme con contenido exclusivo y estrenos semanales." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>K</text></svg>">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-    body{background:linear-gradient(135deg,#0f0c29,#302b63);color:#fff;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;padding:1.5rem}
-    .ring{position:absolute;border:2px solid rgba(255,255,255,0.07);border-radius:50%;animation:rotate linear infinite}
-    .ring:nth-child(1){width:80vmin;height:80vmin;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:30s}
-    .ring:nth-child(2){width:60vmin;height:60vmin;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:45s;animation-direction:reverse}
-    @keyframes rotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
-    header{text-align:center;margin-bottom:2.5rem;z-index:2}
-    h1{font-size:clamp(1.8rem,5vw,2.6rem);background:linear-gradient(to right,#ff7e5f,#feb47b);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .meme{font-size:clamp(0.9rem,3vw,1.1rem);opacity:0.85;max-width:600px;margin:0.8rem auto}
-    .grid{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;z-index:2;max-width:800px}
-    .card{background:rgba(0,0,0,0.25);border-radius:18px;padding:1.4rem;width:100%;max-width:320px;text-align:center;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08);transition:transform 0.25s ease,box-shadow 0.25s ease}
-    .card:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,0.35)}
-    .card h2{font-size:1.25rem;margin:0.8rem 0}
-    .card p{font-size:0.95rem;opacity:0.8;margin:0.9rem 0}
-    a.promo{display:inline-block;background:linear-gradient(to right,#ff416c,#ff4b2b);color:#fff;padding:0.65rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:600;transition:opacity 0.2s;box-shadow:0 4px 12px rgba(255,65,108,0.3)}
-    a.promo:hover{opacity:0.92}
-    @media (max-width:500px){.card{padding:1.2rem}.grid{gap:1.5rem}}
+    :root {
+      --primary-start: #ff7e5f;
+      --primary-end: #feb47b;
+      --bg-start: #0f0c29;
+      --bg-mid: #302b63;
+      --bg-end: #24243e;
+      --text-color: #ffffff;
+      --button-padding: 15px 40px;
+      --button-radius: 50px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, var(--primary-start), var(--primary-end));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.92;
+      margin-bottom: 32px;
+    }
+
+    .cta-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, var(--primary-start), var(--primary-end));
+      color: white;
+      border: none;
+      padding: var(--button-padding);
+      font-size: 1.15rem;
+      font-weight: 600;
+      border-radius: var(--button-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(255, 126, 95, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 200px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(255, 126, 95, 0.6);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+    }
+
+    .cta-button:focus-visible {
+      outline: 2px solid var(--primary-end);
+      outline-offset: 4px;
+      border-radius: var(--button-radius);
+    }
+
+    .cta-button[disabled] {
+      cursor: not-allowed;
+      opacity: 0.85;
+    }
+
+    .loading-spinner {
+      width: 22px;
+      height: 22px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top: 2.5px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo { font-size: 2rem; }
+      h1 { font-size: 2.1rem; }
+      .subtitle { font-size: 1.05rem; }
+      .cta-button {
+        padding: 14px 32px;
+        font-size: 1.05rem;
+        min-width: 180px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      h1 { font-size: 1.9rem; }
+      .subtitle { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="ring"></div>
-  <div class="ring"></div>
+  <div class="container">
+    <div class="logo">KooProme</div>
+    <h1>El lanzamiento de TV+</h1>
+    <p class="subtitle">La próxima generación de entretenimiento llega a KooProme. Contenido exclusivo, calidad cinematográfica, estrenos semanales y más.</p>
 
-  <header>
-    <h1>KooProme</h1>
-    <p class="meme">Plataforma visual. Sin ruido. Solo impacto.</p>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h2>En Youtube</h2>
-      <p>observa Ep1.</p>
-      <a href="https://youtube.com/shorts/QBJkDEUFth8?si=Q5PCuXbNRVU85icx" target="_blank" rel="noopener noreferrer nofollow" class="promo">Ver ahora</a>
-    </div>
-    <div class="card">
-      <h2>En Youtube</h2>
-      <p>observa Ep2.</p>
-      <a href="https://youtube.com/shorts/_9p-OGvXl64?si=_URkmHm8CBVNMnw6" target="_blank" rel="noopener noreferrer nofollow" class="promo">Ver ahora</a>
+    <div class="cta-container">
+      <button id="ctaBtn" class="cta-button" aria-label="Acceder a TV+">
+        Acceder a TV+
+        <span class="loading-spinner" id="spinner"></span>
+      </button>
     </div>
   </div>
+
+  <script>
+    const button = document.getElementById('ctaBtn');
+    const spinner = document.getElementById('spinner');
+
+    if (!button || !spinner) {
+      console.error('Elementos del DOM no encontrados.');
+    } else {
+      button.addEventListener('click', () => {
+        // Activar estado de carga
+        spinner.style.display = 'inline-block';
+        button.disabled = true;
+        button.textContent = 'Cargando...';
+        button.setAttribute('aria-busy', 'true');
+
+        // Redirección con fallback
+        const redirect = () => {
+          try {
+            window.location.href = 'https://koowexa.github.io/TV-/';
+          } catch (err) {
+            console.error('Error al redirigir:', err);
+            // Opcional: mostrar mensaje de error al usuario
+          }
+        };
+
+        // Simular carga breve para UX
+        setTimeout(redirect, 800);
+      });
+    }
+  </script>
 </body>
 </html>
