@@ -2,188 +2,91 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KooProme</title>
-  <meta name="description" content="Accede a TV+, la nueva plataforma de entretenimiento de KooProme con contenido exclusivo y estrenos semanales." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>K</text></svg>">
-
-  <style>
-    :root {
-      --primary-start: #ff7e5f;
-      --primary-end: #feb47b;
-      --bg-start: #0f0c29;
-      --bg-mid: #302b63;
-      --bg-end: #24243e;
-      --text-color: #ffffff;
-      --button-padding: 15px 40px;
-      --button-radius: 50px;
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-    }
-
-    .container {
-      text-align: center;
-      max-width: 700px;
-      width: 100%;
-    }
-
-    .logo {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      background: linear-gradient(to right, var(--primary-start), var(--primary-end));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .subtitle {
-      font-size: 1.15rem;
-      opacity: 0.92;
-      margin-bottom: 32px;
-    }
-
-    .cta-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .cta-button {
-      background: linear-gradient(to right, var(--primary-start), var(--primary-end));
-      color: white;
-      border: none;
-      padding: var(--button-padding);
-      font-size: 1.15rem;
-      font-weight: 600;
-      border-radius: var(--button-radius);
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 6px 20px rgba(255, 126, 95, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-width: 200px;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(255, 126, 95, 0.6);
-    }
-
-    .cta-button:active {
-      transform: translateY(0);
-      box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
-    }
-
-    .cta-button:focus-visible {
-      outline: 2px solid var(--primary-end);
-      outline-offset: 4px;
-      border-radius: var(--button-radius);
-    }
-
-    .cta-button[disabled] {
-      cursor: not-allowed;
-      opacity: 0.85;
-    }
-
-    .loading-spinner {
-      width: 22px;
-      height: 22px;
-      border: 2.5px solid rgba(255, 255, 255, 0.3);
-      border-top: 2.5px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      display: none;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .logo { font-size: 2rem; }
-      h1 { font-size: 2.1rem; }
-      .subtitle { font-size: 1.05rem; }
-      .cta-button {
-        padding: 14px 32px;
-        font-size: 1.05rem;
-        min-width: 180px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      h1 { font-size: 1.9rem; }
-      .subtitle { font-size: 1rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accede a los servidores oficiales de KOOWEXA. Plataforma KooPages." />
+  <title>KooPages</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDc0RDQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDI0ODgiLz48L2xpbmVhckdyYWRpZW50PjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjQwIiBmaWxsPSJ1cmwoI2EpIi8+PHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5NiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkspcDwvdGV4dD48L3N2Zz4=" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="logo">KooProme</div>
-    <h1>El lanzamiento de TV+</h1>
-    <p class="subtitle">La próxima generación de entretenimiento llega a KooProme. Contenido exclusivo, calidad cinematográfica, estrenos semanales y más.</p>
-
-    <div class="cta-container">
-      <button id="ctaBtn" class="cta-button" aria-label="Acceder a TV+">
-        Acceder a TV+
-        <span class="loading-spinner" id="spinner"></span>
-      </button>
+  <header role="banner">
+    <div class="logo-container" aria-label="KooPages – Plataforma oficial de KOOWEXA">
+      <svg class="logo-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0074d4"/>
+          <stop offset="100%" stop-color="#002488"/>
+        </linearGradient>
+        <circle cx="256" cy="256" r="240" fill="url(#grad)"/>
+        <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="96" fill="white" text-anchor="middle">Kp</text>
+      </svg>
+      <div class="logo-text">Koo<span>Pages</span></div>
     </div>
-  </div>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#servidores">Servidores</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-  <script>
-    const button = document.getElementById('ctaBtn');
-    const spinner = document.getElementById('spinner');
+  <main>
+    <section id="inicio" class="hero" aria-labelledby="inicio-title">
+      <h1 id="inicio-title">Accede a los Servidores Oficiales de KOOWEXA</h1>
+      <p>Explora contenido exclusivo, menús, servicios y más a través de nuestra red de servidores autorizados.</p>
+    </section>
 
-    if (!button || !spinner) {
-      console.error('Elementos del DOM no encontrados.');
-    } else {
-      button.addEventListener('click', () => {
-        // Activar estado de carga
-        spinner.style.display = 'inline-block';
-        button.disabled = true;
-        button.textContent = 'Cargando...';
-        button.setAttribute('aria-busy', 'true');
+    <section id="servidores" aria-labelledby="servidores-title">
+      <h2 id="servidores-title" class="visually-hidden">Lista de servidores disponibles</h2>
+      <div class="servers-grid">
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor1/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 1</h3>
+          <p>Menús y cotizaciones</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor2/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 2</h3>
+          <p>Pedidos y entregas</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor3/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 3</h3>
+          <p>Galería de eventos</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor4/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 4</h3>
+          <p>Reservas y agendas</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor5/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 5</h3>
+          <p>Ubicaciones y zonas</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor6/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 6</h3>
+          <p>Equipo y contacto</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor7/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 7</h3>
+          <p>Estadísticas y reportes</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor8/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 8</h3>
+          <p>Promociones actuales</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor9/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 9</h3>
+          <p>Aplicación móvil</p>
+        </a>
+        <a href="https://hostingkoowexawebsiteoficial.on.drv.tw/servidor10/" class="server-card" target="_blank" rel="noopener">
+          <h3>Servidor 10</h3>
+          <p>Panel administrativo</p>
+        </a>
+      </div>
+    </section>
 
-        // Redirección con fallback
-        const redirect = () => {
-          try {
-            window.location.href = 'https://koowexa.github.io/TV-/';
-          } catch (err) {
-            console.error('Error al redirigir:', err);
-            // Opcional: mostrar mensaje de error al usuario
-          }
-        };
+    <section id="contacto" class="contact-section" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">¿Necesitas ayuda?</h2>
+      <p>Contáctanos directamente por correo electrónico:</p>
+      <a href="mailto:koowexa@gmail.com" class="contact-link" rel="noopener">koowexa@gmail.com</a>
+    </section>
+  </main>
 
-        // Simular carga breve para UX
-        setTimeout(redirect, 800);
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,30 +1,28 @@
-# 📣 KOOPROME - Plataforma de Promoción y Anuncios
+# KooPages
 
-Es una plataforma dinámica y minimalista diseñada para promocionar servicios, gestionar anuncios y facilitar la interacción directa con los usuarios.
+<div align="center">
 
----
+![KooPages Logo](https://img.shields.io/badge/KooPages- 🌐-blue?style=for-the-badge&logo=web)
+![Version](https://img.shields.io/badge/version-1.0.0-success?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-Web-brightgreen?style=for-the-badge)
 
-## 🌟 Características Principales
+**Plataforma oficial para acceder a los servidores de KOOWEXA OFICIAL**
 
-- **Interfaz limpia y minimalista**: Sin elementos redundantes, botones innecesarios ni espacios en blanco.
-- **Diseño corporativo**: Estética profesional y tecnológica, optimizada para transmisión de confianza y claridad visual.
-- **Animaciones profesionales**: Transiciones suaves y elementos visuales dinámicos (como anillos animados) que refuerzan la experiencia sin distraer.
-- **Integración de permisos avanzados**:
-  - Notificaciones inteligentes (dentro y fuera del navegador)
-  - Acceso a ubicación
-  - Almacenamiento persistente
-- **Compatibilidad multiplataforma**: Totalmente responsive y optimizada para móviles y escritorio.
-- **Sistema de caducidad configurable**: La plataforma puede programarse para dejar de estar activa tras una fecha específica (por defecto: 1 de diciembre de 2025).
-- **Compartir fácilmente**: Botón de compartir con mensaje predefinido para redes sociales y WhatsApp, incluyendo productos seleccionados.
+</div>
 
----
+## ✨ Características
 
-## 🔗 Enlaces Oficiales
+### 🌐 Acceso Centralizado
+- 🔗 **10 servidores oficiales** integrados en una sola interfaz
+- 📂 **Categorías temáticas** (menús, eventos, reservas, promociones, etc.)
+- 📲 **Enlaces directos** con apertura en nueva pestaña
+- 📧 **Contacto integrado** vía Gmail oficial (`koowexa@gmail.com`)
+- 🧾 **Servidor 1 incluye menú actualizado** con precios en COP
 
-- 🌐 **Sitio web oficial**: [KOOWEXA Oficial](https://koowexa.github.io/oficial/)
-- ▶️ **YouTube**: [KOOWEXA en YouTube](https://youtube.com/@koowexa?si=QCFg-JY-QJLQe2sZ)
-- 🐦 **X (Twitter)**: [@koowexa](https://x.com/koowexa?t=rW2wTyGXhZT-wShWyU2ROQ&s=09)
-- 💬 **WhatsApp Channel**: [KOOWEXA en WhatsApp](https://whatsapp.com/channel/0029VbB6FJk5q08fW25JNN3w)
-- 📡 **Telegram**: [@KOOWEXA](https://t.me/KOOWEXA)
-
----
+### 🎨 Experiencia de Usuario
+- 🔵 **Interfaz moderna** con esquema de color azul tecnológico
+- 🎯 **Diseño completamente centrado** y visualmente equilibrado
+- 📱 **Responsive design** adaptable a móviles, tablets y escritorio
+- 🌀 **Navegación suave** con scroll animado y accesibilidad total
+- 🖼️ **Logo y favicon SVG** integrados sin dependencias externas
