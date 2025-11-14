@@ -1,434 +1,732 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Accede a los servidores oficiales de KOOWEXA. Plataforma KooPages.">
-  <title>KooPages</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImFkdmFuY2VkLWciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDc0RDQiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwOTRmYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMjQ4OCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjQwIiBmaWxsPSJ1cmwoI2FkdmFuY2VkLWcpIi8+PHBhdGggZD0iTTI1NiAxNjBjLTI1IDAtNDUgMjAtNDUgNDVzMjAgNDUgNDUgNDUgNDUtMjAgNDUtNDUtMjAtNDUtNDUtNDV6IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0yMDAgMjUwaC0zMHYyMGgzMHoiIGZpbGw9IndoaXRlIi8+PHBhdGggZD0iTTM0MiAyNTBoMzB2MjBoLTMweiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=">
-  <style>
-    :root {
-      --primary: #0074d4;
-      --primary-dark: #005ab5;
-      --card-bg: #ffffff;
-      --light-bg: #f5f9ff;
-      --dark-text: #0d2b45;
-      --text-muted: #555;
-      --border-radius: 8px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Accede a los servidores oficiales de KOOWEXA. Plataforma KooPages.">
+<title>KooPages</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDc0ZDMiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDJhODgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjU2IDQ4QzEzNS44IDQ4IDQ4IDEzNS44IDQ4IDI1NnM4Ny44IDIwOCAyMDggMjA4IDIwOC04Ny44IDIwOC0yMDhTMzc2LjIgNDggMjU2IDQ4eiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yNTYgMTQ0Yy02MS45IDAtMTEyIDUwLjEtMTEyIDExMnM1MC4xIDExMiAxMTIgMTEyIDExMi01MC4xIDExMi0xMTJTMzE3LjkgMTQ0IDI1NiAxNDR6bTAgMTYwYy0yNi41IDAtNDgtMjEuNS00OC00OHMyMS41LTQ4IDQ4LTQ4IDQ4IDIxLjUgNDggNDgtMjEuNSA0OC00OCA0OHoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzIwIDIyNGgtNjR2LTMyYzAtOC44LTcuMi0xNi0xNi0xNnMtMTYgNy4yLTE2IDE2djY0YzAgOC44IDcuMiAxNiAxNiAxNmg4MGM4LjggMCAxNi03LjIgMTYtMTZzLTcuMi0xNi0xNi0xNnoiLz48L3N2Zz4=">
+<style>
+:root {
+--primary: #0074d3;
+--primary-dark: #002a88;
+--primary-light: #e8f2ff;
+--card-bg: #ffffff;
+--light-bg: #f8fbff;
+--dark-text: #0f2b46;
+--text-muted: #666;
+--border-radius: 16px;
+--shadow: 0 8px 24px rgba(0,116,211,0.08);
+--success: #27ae60;
+--danger: #e74c3c;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--light-bg);
-      color: var(--dark-text);
-      line-height: 1.5;
-      min-height: 100vh;
-    }
+body {
+font-family: 'Segoe UI', system-ui, sans-serif;
+background: var(--light-bg);
+color: var(--dark-text);
+line-height: 1.6;
+min-height: 100vh;
+}
 
-    .app-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+.app-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 1rem;
+}
 
-    header {
-      background: linear-gradient(to right, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 0.75rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-    }
+header {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: white;
+padding: 1.25rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 0 0 var(--border-radius) var(--border-radius);
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 100;
+}
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+.logo-container {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-    }
+.logo-icon {
+width: 44px;
+height: 44px;
+}
 
-    .logo-text {
-      font-size: 1.4rem;
-      font-weight: 800;
-    }
+.logo-text {
+font-size: 1.8rem;
+font-weight: 800;
+letter-spacing: -0.5px;
+}
 
-    nav {
-      display: flex;
-      gap: 0.75rem;
-    }
+nav {
+display: flex;
+gap: 1.5rem;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
+nav a {
+color: white;
+text-decoration: none;
+font-weight: 600;
+padding: 0.75rem 1.25rem;
+border-radius: 10px;
+font-size: 1rem;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
 
-    main {
-      padding: 1.5rem 0;
-    }
+nav a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background: white;
+transition: width 0.3s ease;
+}
 
-    .hero {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-    }
+nav a:hover::after {
+width: 100%;
+}
 
-    .hero h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
+main {
+padding: 2.5rem 0;
+}
 
-    .hero p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.hero {
+text-align: center;
+margin-bottom: 3rem;
+padding: 3rem 2rem;
+background: var(--card-bg);
+border-radius: var(--border-radius);
+box-shadow: var(--shadow);
+position: relative;
+overflow: hidden;
+}
 
-    .servers-section {
-      margin-bottom: 2rem;
-    }
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+.hero h1 {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+color: var(--primary);
+font-weight: 800;
+}
 
-    .section-header h2 {
-      font-size: 1.4rem;
-      color: var(--primary);
-    }
+.hero p {
+font-size: 1.2rem;
+color: var(--text-muted);
+max-width: 800px;
+margin: 0 auto;
+line-height: 1.8;
+}
 
-    .search-box {
-      padding: 0.5rem 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      width: 200px;
-    }
+.servers-section {
+margin-bottom: 3rem;
+}
 
-    .servers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+gap: 1rem;
+}
 
-    .server-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 1.25rem 1rem;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      border: 1px solid #e0e0e0;
-    }
+.section-header h2 {
+font-size: 1.8rem;
+color: var(--primary);
+font-weight: 700;
+}
 
-    .server-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
+.search-box {
+padding: 1rem 1.5rem;
+border: 2px solid #e1e8f0;
+border-radius: 12px;
+font-size: 1rem;
+width: 300px;
+transition: all 0.3s ease;
+background: var(--card-bg);
+}
 
-    .server-card .server-status {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-right: 6px;
-    }
+.search-box:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(0,116,211,0.1);
+}
 
-    .server-card .server-status.online {
-      background-color: #2ecc71;
-    }
+.servers-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 2rem;
+}
 
-    .server-card .server-status.offline {
-      background-color: #e74c3c;
-    }
+.server-card {
+background: var(--card-bg);
+border-radius: var(--border-radius);
+padding: 2rem;
+text-decoration: none;
+color: inherit;
+display: flex;
+flex-direction: column;
+border: 2px solid transparent;
+transition: all 0.3s ease;
+box-shadow: var(--shadow);
+position: relative;
+overflow: hidden;
+}
 
-    .contact-section {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-    }
+.server-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: var(--primary);
+transform: scaleX(0);
+transition: transform 0.3s ease;
+}
 
-    .contact-section h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-      color: var(--primary);
-    }
+.server-card:hover {
+transform: translateY(-8px);
+border-color: var(--primary);
+box-shadow: 0 16px 40px rgba(0,116,211,0.15);
+}
 
-    .contact-link {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      margin-top: 0.5rem;
-      display: inline-block;
-    }
+.server-card:hover::before {
+transform: scaleX(1);
+}
 
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+.server-card h3 {
+font-size: 1.4rem;
+margin-bottom: 1rem;
+color: var(--primary);
+font-weight: 700;
+}
 
-    .stat-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 1rem;
-      text-align: center;
-      min-width: 120px;
-      border: 1px solid #e0e0e0;
-    }
+.server-description {
+font-size: 1rem;
+color: var(--text-muted);
+margin-bottom: 1.5rem;
+line-height: 1.6;
+flex-grow: 1;
+}
 
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
+.server-card .server-status {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-weight: 600;
+}
 
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+.server-card .status-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+}
 
-    @media (max-width: 768px) {
-      header {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        text-align: center;
-        justify-content: center;
-      }
+.server-card .status-dot.online {
+background-color: var(--success);
+box-shadow: 0 0 8px var(--success);
+}
 
-      nav {
-        width: 100%;
-        justify-content: center;
-      }
+.server-card .status-dot.offline {
+background-color: var(--danger);
+}
 
-      .hero h1 {
-        font-size: 1.6rem;
-      }
+.server-card .status-dot.checking {
+background-color: #f39c12;
+animation: pulse 2s infinite;
+}
 
-      .servers-grid {
-        grid-template-columns: 1fr;
-      }
+.server-category {
+display: inline-block;
+padding: 0.5rem 1rem;
+background: var(--primary-light);
+color: var(--primary);
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 700;
+margin-bottom: 1rem;
+align-self: flex-start;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
 
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
+.contact-section {
+text-align: center;
+padding: 3rem 2rem;
+background: var(--card-bg);
+border-radius: var(--border-radius);
+box-shadow: var(--shadow);
+position: relative;
+}
 
-      .search-box {
-        width: 100%;
-      }
+.contact-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
 
-      .stats-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+.contact-section h2 {
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+color: var(--primary);
+font-weight: 700;
+}
+
+.contact-link {
+color: var(--primary);
+font-weight: 700;
+text-decoration: none;
+margin-top: 1rem;
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 1.1rem;
+transition: all 0.3s ease;
+padding: 0.75rem 1.5rem;
+border: 2px solid var(--primary);
+border-radius: 10px;
+}
+
+.contact-link:hover {
+background: var(--primary);
+color: white;
+transform: translateY(-2px);
+}
+
+.stats-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+margin: 3rem 0;
+}
+
+.stat-card {
+background: var(--card-bg);
+border-radius: var(--border-radius);
+padding: 2rem;
+text-align: center;
+border: 2px solid #e1e8f0;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+
+.stat-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: var(--primary);
+}
+
+.stat-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow);
+}
+
+.stat-value {
+font-size: 2.5rem;
+font-weight: 800;
+color: var(--primary);
+margin-bottom: 0.5rem;
+}
+
+.stat-label {
+font-size: 1rem;
+color: var(--text-muted);
+font-weight: 600;
+}
+
+.filter-container {
+display: flex;
+gap: 1rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+
+.filter-btn {
+padding: 0.75rem 1.5rem;
+background: var(--card-bg);
+border: 2px solid #e1e8f0;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease;
+font-weight: 600;
+color: var(--text-muted);
+}
+
+.filter-btn.active {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+.filter-btn:hover:not(.active) {
+border-color: var(--primary);
+color: var(--primary);
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+gap: 1.5rem;
+padding: 1.5rem;
+}
+
+nav {
+width: 100%;
+justify-content: center;
+}
+
+.hero {
+padding: 2rem 1rem;
+}
+
+.hero h1 {
+font-size: 2rem;
+}
+
+.section-header {
+flex-direction: column;
+align-items: stretch;
+}
+
+.search-box {
+width: 100%;
+}
+
+.servers-grid {
+grid-template-columns: 1fr;
+}
+
+.stats-container {
+grid-template-columns: 1fr;
+}
+
+.filter-container {
+justify-content: center;
+}
+}
+
+@media (max-width: 480px) {
+.logo-text {
+font-size: 1.5rem;
+}
+
+nav a {
+padding: 0.5rem 1rem;
+font-size: 0.9rem;
+}
+
+.hero h1 {
+font-size: 1.8rem;
+}
+
+.server-card {
+padding: 1.5rem;
+}
+}
+</style>
 </head>
 <body>
-  <div class="app-container">
-    <header>
-      <div class="logo-container">
-        <svg class="logo-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="advanced-g" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0074d4"/>
-              <stop offset="50%" stop-color="#0094fa"/>
-              <stop offset="100%" stop-color="#002488"/>
-            </linearGradient>
-          </defs>
-          <circle cx="256" cy="256" r="240" fill="url(#advanced-g)"/>
-          <path d="M256 160c-25 0-45 20-45 45s20 45 45 45 45-20 45-45-20-45-45-45z" fill="white"/>
-          <path d="M200 250h-30v20h30z" fill="white"/>
-          <path d="M342 250h30v20h-30z" fill="white"/>
-        </svg>
-        <div class="logo-text">KooPages</div>
-      </div>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servidores">Servidores</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </header>
+<div class="app-container">
+<header>
+<div class="logo-container">
+<svg class="logo-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#0074d3"/>
+<stop offset="100%" stop-color="#002a88"/>
+</linearGradient>
+</defs>
+<path fill="url(#g)" d="M256 48C135.8 48 48 135.8 48 256s87.8 208 208 208 208-87.8 208-208S376.2 48 256 48z"/>
+<path fill="#fff" d="M256 144c-61.9 0-112 50.1-112 112s50.1 112 112 112 112-50.1 112-112S317.9 144 256 144zm0 160c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/>
+<path fill="#fff" d="M320 224h-64v-32c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16h80c8.8 0 16-7.2 16-16s-7.2-16-16-16z"/>
+</svg>
+<div class="logo-text">KooPages</div>
+</div>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#servidores">Servidores</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
 
-    <main>
-      <section id="inicio" class="hero">
-        <h1>Servidores Oficiales de KooPages</h1>
-        <p>Visita los negocios asociados a los servidores de KooPages, La distribucion de los negocios de emprendedores que solicitaron los servicios determinados que ofrece KOOWEXA.</p>
-      </section>
+<main>
+<section id="inicio" class="hero">
+<h1>Servidores Oficiales de KooPages</h1>
+<p>Accede a los negocios asociados de KooPages. Plataforma especializada en conectar emprendedores con servicios de calidad.</p>
+</section>
 
-      <div class="stats-container">
-        <div class="stat-card">
-          <div class="stat-value" id="online-servers">0</div>
-          <div class="stat-label">Servidores Activos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="total-users">0</div>
-          <div class="stat-label">Usuarios Conectados</div>
-        </div>
-      </div>
+<div class="stats-container">
+<div class="stat-card">
+<div class="stat-value" id="online-servers">0</div>
+<div class="stat-label">Servidores Activos</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="total-users">0</div>
+<div class="stat-label">Usuarios Conectados</div>
+</div>
+</div>
 
-      <section id="servidores" class="servers-section">
-        <div class="section-header">
-          <h2>Servidores Disponibles</h2>
-          <input type="text" class="search-box" id="server-search" placeholder="Buscar servidores...">
-        </div>
-        <div class="servers-grid" id="servers-container"></div>
-      </section>
+<section id="servidores" class="servers-section">
+<div class="section-header">
+<h2>Servidores Disponibles</h2>
+<input type="text" class="search-box" id="server-search" placeholder="Buscar servidores...">
+</div>
 
-      <section id="contacto" class="contact-section">
-        <h2>¿Necesitas ayuda?</h2>
-        <p>Contácta directamente por correo electrónico:</p>
-        <a href="mailto:koowexa@gmail.com" class="contact-link">koowexa@gmail.com</a>
-      </section>
-    </main>
-  </div>
+<div class="filter-container" id="category-filters">
+</div>
 
-  <script>
-    const serverAPI = {
-      async getServers() {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            resolve([
-              { id: 1, name: "Servidor 1", url: "https://spoo.me/RmjWYL", status: "online" },
-              { id: 2, name: "Servidor 2", url: "https://spoo.me/kWhQOB", status: "online" },
-              { id: 3, name: "Servidor 3", url: "https://spoo.me/liWFXj", status: "online" },
-              { id: 4, name: "Servidor 4", url: "#", status: "offline" },
-              { id: 5, name: "Servidor 5", url: "#", status: "offline" },
-              { id: 6, name: "Servidor 6", url: "#", status: "offline" },
-              { id: 7, name: "Servidor 7", url: "#", status: "offline" },
-              { id: 8, name: "Servidor 8", url: "#", status: "offline" },
-              { id: 9, name: "Servidor 9", url: "#", status: "offline" },
-              { id: 10, name: "Servidor 10", url: "#", status: "offline" }
-            ]);
-          }, 300);
-        });
-      },
-      
-      async getStats() {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            resolve({
-              onlineServers: 6,
-              totalUsers: 389
-            });
-          }, 200);
-        });
-      }
-    };
+<div class="servers-grid" id="servers-container"></div>
+</section>
 
-    const appState = {
-      servers: [],
-      filteredServers: [],
-      stats: {
-        onlineServers: 0,
-        totalUsers: 0
-      }
-    };
+<section id="contacto" class="contact-section">
+<h2>¿Necesitas ayuda?</h2>
+<p>Contáctanos directamente por correo electrónico:</p>
+<a href="mailto:koowexa@gmail.com" class="contact-link">koowexa@gmail.com</a>
+</section>
+</main>
+</div>
 
-    const serversContainer = document.getElementById('servers-container');
-    const serverSearch = document.getElementById('server-search');
-    const onlineServersEl = document.getElementById('online-servers');
-    const totalUsersEl = document.getElementById('total-users');
+<script>
+const kooPagesAPI = {
+async verifyLink(url) {
+return new Promise((resolve) => {
+setTimeout(() => {
+const isValid = url && url !== "#";
+const status = isValid ? "online" : "offline";
+resolve({
+valid: isValid,
+status: status,
+lastChecked: new Date().toISOString()
+});
+}, 600);
+});
+},
 
-    function renderServers(servers) {
-      serversContainer.innerHTML = '';
-      
-      if (servers.length === 0) {
-        serversContainer.innerHTML = '<p>No se encontraron servidores.</p>';
-        return;
-      }
-      
-      servers.forEach(server => {
-        const serverCard = document.createElement('a');
-        serverCard.href = server.url;
-        serverCard.className = `server-card`;
-        serverCard.target = '_blank';
-        serverCard.rel = 'noopener';
-        serverCard.innerHTML = `
-          <h3>${server.name}</h3>
-          <div><span class="server-status ${server.status}"></span>${server.status === 'online' ? 'En línea' : 'Desconectado'}</div>
-        `;
-        
-        serversContainer.appendChild(serverCard);
-      });
-    }
+categorizeContent(name) {
+const lowerName = name.toLowerCase();
+if (lowerName.includes('tienda') || lowerName.includes('shop') || lowerName.includes('store')) {
+return "tienda";
+}
+return "servicios";
+},
 
-    function filterServers(searchTerm) {
-      if (!searchTerm) {
-        appState.filteredServers = [...appState.servers];
-      } else {
-        appState.filteredServers = appState.servers.filter(server => 
-          server.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-      }
-      
-      renderServers(appState.filteredServers);
-    }
+generateDescription(name, category) {
+if (category === "tienda") {
+return `Tienda especializada en ${name}. Productos de calidad con entrega inmediata.`;
+}
+return `Servicios profesionales de ${name}. Soluciones personalizadas para tus necesidades.`;
+},
 
-    function updateStats(stats) {
-      onlineServersEl.textContent = stats.onlineServers;
-      totalUsersEl.textContent = stats.totalUsers;
-    }
+async getServers() {
+const servers = [
+{ id: 1, name: "TIENDA ONLINE DE ELECTRODOMESTICOS", url: "https://spoo.me/RmjWYL", status: "checking" },
+{ id: 2, name: "SERVICIO DE SALON DE BELLEZA", url: "https://spoo.me/kWhQOB", status: "checking" },
+{ id: 3, name: "TIENDA ONLINE DE TODO UN POCO", url: "https://spoo.me/liWFXj", status: "checking" }
+];
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (target) {
-          const offset = target.getBoundingClientRect().top + window.scrollY - 80;
-          window.scrollTo({ top: offset });
-        }
-      });
-    });
+return servers.map(server => {
+const category = this.categorizeContent(server.name);
+const description = this.generateDescription(server.name, category);
+return {
+...server,
+category: category,
+description: description
+};
+});
+},
 
-    async function init() {
-      try {
-        appState.servers = await serverAPI.getServers();
-        appState.filteredServers = [...appState.servers];
-        renderServers(appState.filteredServers);
-        
-        appState.stats = await serverAPI.getStats();
-        updateStats(appState.stats);
-      } catch (error) {
-        console.error('Error al cargar datos:', error);
-      }
-    }
+async getStats() {
+return {
+onlineServers: 3,
+totalUsers: 1247
+};
+}
+};
 
-    serverSearch.addEventListener('input', (e) => {
-      filterServers(e.target.value);
-    });
+const appState = {
+servers: [],
+filteredServers: [],
+categories: [],
+activeCategory: "all",
+stats: {
+onlineServers: 0,
+totalUsers: 0
+}
+};
 
-    document.addEventListener('DOMContentLoaded', init);
-  </script>
+const serversContainer = document.getElementById('servers-container');
+const serverSearch = document.getElementById('server-search');
+const categoryFilters = document.getElementById('category-filters');
+const onlineServersEl = document.getElementById('online-servers');
+const totalUsersEl = document.getElementById('total-users');
+
+function renderServers(servers) {
+serversContainer.innerHTML = '';
+
+if (servers.length === 0) {
+serversContainer.innerHTML = '<p style="text-align: center; grid-column: 1 / -1; padding: 2rem;">No se encontraron servidores.</p>';
+return;
+}
+
+servers.forEach(server => {
+const serverCard = document.createElement('a');
+serverCard.href = server.url;
+serverCard.className = `server-card`;
+serverCard.target = '_blank';
+serverCard.rel = 'noopener';
+serverCard.innerHTML = `
+<span class="server-category">${server.category}</span>
+<h3>${server.name}</h3>
+<p class="server-description">${server.description}</p>
+<div class="server-status">
+<span class="status-dot ${server.status}"></span>
+${server.status === 'online' ? 'En línea' : server.status === 'offline' ? 'Desconectado' : 'Verificando...'}
+</div>
+`;
+
+serversContainer.appendChild(serverCard);
+});
+}
+
+function filterServers(searchTerm, category = appState.activeCategory) {
+let filtered = [...appState.servers];
+
+if (category !== "all") {
+filtered = filtered.filter(server => server.category === category);
+}
+
+if (searchTerm) {
+filtered = filtered.filter(server => 
+server.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+server.description.toLowerCase().includes(searchTerm.toLowerCase())
+);
+}
+
+appState.filteredServers = filtered;
+renderServers(appState.filteredServers);
+}
+
+function updateStats(stats) {
+onlineServersEl.textContent = stats.onlineServers;
+totalUsersEl.textContent = stats.totalUsers.toLocaleString();
+}
+
+function generateCategoryFilters() {
+const categories = ["all", "tienda", "servicios"];
+appState.categories = categories;
+
+categoryFilters.innerHTML = '';
+
+categories.forEach(category => {
+const filterBtn = document.createElement('button');
+filterBtn.className = `filter-btn ${category === "all" ? "active" : ""}`;
+filterBtn.textContent = category === "all" ? "Todos" : 
+category === "tienda" ? "Tiendas" : "Servicios";
+filterBtn.dataset.category = category;
+
+filterBtn.addEventListener('click', () => {
+document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+filterBtn.classList.add('active');
+appState.activeCategory = category;
+filterServers(serverSearch.value, category);
+});
+
+categoryFilters.appendChild(filterBtn);
+});
+}
+
+async function verifyServerStatus(servers) {
+const statusPromises = servers.map(async server => {
+const verification = await kooPagesAPI.verifyLink(server.url);
+return {
+...server,
+status: verification.status,
+lastChecked: verification.lastChecked
+};
+});
+
+return Promise.all(statusPromises);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const target = document.querySelector(targetId);
+if (target) {
+const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+window.scrollTo({ top: offset, behavior: 'smooth' });
+}
+});
+});
+
+async function init() {
+try {
+appState.servers = await kooPagesAPI.getServers();
+appState.filteredServers = [...appState.servers];
+
+generateCategoryFilters();
+renderServers(appState.filteredServers);
+
+appState.servers = await verifyServerStatus(appState.servers);
+appState.filteredServers = [...appState.servers];
+renderServers(appState.filteredServers);
+
+appState.stats = await kooPagesAPI.getStats();
+updateStats(appState.stats);
+
+} catch (error) {
+console.error('Error:', error);
+}
+}
+
+serverSearch.addEventListener('input', (e) => {
+filterServers(e.target.value);
+});
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
 </body>
 </html>
