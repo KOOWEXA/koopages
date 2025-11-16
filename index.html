@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Accede a los servidores oficiales de KOOWEXA. Plataforma KooPages.">
-<title>KooPages</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDc0ZDMiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDJhODgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjU2IDQ4QzEzNS44IDQ4IDQ4IDEzNS44IDQ4IDI1NnM4Ny44IDIwOCAyMDggMjA4IDIwOC04Ny44IDIwOC0yMDhTMzc2LjIgNDggMjU2IDQ4eiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yNTYgMTQ0Yy02MS45IDAtMTEyIDUwLjEtMTEyIDExMnM1MC4xIDExMiAxMTIgMTEyIDExMi01MC4xIDExMi0xMTJTMzE3LjkgMTQ0IDI1NiAxNDR6bTAgMTYwYy0yNi41IDAtNDgtMjEuNS00OC00OHMyMS41LTQ4IDQ4LTQ4IDQ4IDIxLjUgNDggNDgtMjEuNSA0OC00OCA0OHoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzIwIDIyNGgtNjR2LTMyYzAtOC44LTcuMi0xNi0xNi0xNnMtMTYgNy4yLTE2IDE2djY0YzAgOC44IDcuMiAxNiAxNiAxNmg4MGM4LjggMCAxNi03LjIgMTYtMTZzLTcuMi0xNi0xNi0xNnoiLz48L3N2Zz4=">
+<meta name="description" content="Accede a los servidores oficiales de KOOWEXA. Plataforma KooPages especializada en conectar emprendedores con servicios de calidad.">
+<meta name="keywords" content="KOOWEXA, KooPages, servidores, emprendedores, servicios, tiendas online">
+<meta name="author" content="KooPages">
+<title>KooPages - Servidores Oficiales de KOOWEXA</title>
+<link rel="icon" type="image/jpeg" href="https://github.com/KOOWEXA/koopages/raw/refs/heads/main/KP.jpeg">
 <style>
 :root {
 --primary: #0074d3;
@@ -19,6 +21,8 @@
 --shadow: 0 8px 24px rgba(0,116,211,0.08);
 --success: #27ae60;
 --danger: #e74c3c;
+--title-color-1: #2c3e50; /* Primera tonalidad para el título */
+--title-color-2: #3498db; /* Segunda tonalidad para el título */
 }
 
 * {
@@ -64,6 +68,7 @@ gap: 1rem;
 .logo-icon {
 width: 44px;
 height: 44px;
+border-radius: 8px;
 }
 
 .logo-text {
@@ -100,8 +105,14 @@ background: white;
 transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a:focus::after {
 width: 100%;
+}
+
+nav a:focus {
+outline: 2px solid white;
+outline-offset: 2px;
 }
 
 main {
@@ -132,8 +143,11 @@ background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 .hero h1 {
 font-size: 2.5rem;
 margin-bottom: 1.5rem;
-color: var(--primary);
 font-weight: 800;
+background: linear-gradient(90deg, var(--title-color-1), var(--title-color-2));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
 }
 
 .hero p {
@@ -212,13 +226,16 @@ transform: scaleX(0);
 transition: transform 0.3s ease;
 }
 
-.server-card:hover {
+.server-card:hover,
+.server-card:focus {
 transform: translateY(-8px);
 border-color: var(--primary);
 box-shadow: 0 16px 40px rgba(0,116,211,0.15);
+outline: none;
 }
 
-.server-card:hover::before {
+.server-card:hover::before,
+.server-card:focus::before {
 transform: scaleX(1);
 }
 
@@ -319,56 +336,12 @@ border: 2px solid var(--primary);
 border-radius: 10px;
 }
 
-.contact-link:hover {
+.contact-link:hover,
+.contact-link:focus {
 background: var(--primary);
 color: white;
 transform: translateY(-2px);
-}
-
-.stats-container {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 2rem;
-margin: 3rem 0;
-}
-
-.stat-card {
-background: var(--card-bg);
-border-radius: var(--border-radius);
-padding: 2rem;
-text-align: center;
-border: 2px solid #e1e8f0;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-
-.stat-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: var(--primary);
-}
-
-.stat-card:hover {
-transform: translateY(-5px);
-box-shadow: var(--shadow);
-}
-
-.stat-value {
-font-size: 2.5rem;
-font-weight: 800;
-color: var(--primary);
-margin-bottom: 0.5rem;
-}
-
-.stat-label {
-font-size: 1rem;
-color: var(--text-muted);
-font-weight: 600;
+outline: none;
 }
 
 .filter-container {
@@ -398,6 +371,28 @@ border-color: var(--primary);
 .filter-btn:hover:not(.active) {
 border-color: var(--primary);
 color: var(--primary);
+}
+
+.filter-btn:focus {
+outline: 2px solid var(--primary);
+outline-offset: 2px;
+}
+
+.skip-link {
+position: absolute;
+top: -40px;
+left: 6px;
+background: var(--primary);
+color: white;
+padding: 8px;
+text-decoration: none;
+border-radius: 4px;
+z-index: 1000;
+transition: top 0.3s;
+}
+
+.skip-link:focus {
+top: 6px;
 }
 
 @keyframes pulse {
@@ -438,10 +433,6 @@ width: 100%;
 grid-template-columns: 1fr;
 }
 
-.stats-container {
-grid-template-columns: 1fr;
-}
-
 .filter-container {
 justify-content: center;
 }
@@ -468,20 +459,11 @@ padding: 1.5rem;
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <div class="app-container">
 <header>
 <div class="logo-container">
-<svg class="logo-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#0074d3"/>
-<stop offset="100%" stop-color="#002a88"/>
-</linearGradient>
-</defs>
-<path fill="url(#g)" d="M256 48C135.8 48 48 135.8 48 256s87.8 208 208 208 208-87.8 208-208S376.2 48 256 48z"/>
-<path fill="#fff" d="M256 144c-61.9 0-112 50.1-112 112s50.1 112 112 112 112-50.1 112-112S317.9 144 256 144zm0 160c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/>
-<path fill="#fff" d="M320 224h-64v-32c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16h80c8.8 0 16-7.2 16-16s-7.2-16-16-16z"/>
-</svg>
+<img class="logo-icon" src="https://github.com/KOOWEXA/koopages/raw/refs/heads/main/KP.jpeg" alt="Logo de KooPages">
 <div class="logo-text">KooPages</div>
 </div>
 <nav>
@@ -491,27 +473,16 @@ padding: 1.5rem;
 </nav>
 </header>
 
-<main>
+<main id="main-content">
 <section id="inicio" class="hero">
 <h1>Servidores Oficiales de KooPages</h1>
 <p>Accede a los negocios asociados de KooPages. Plataforma especializada en conectar emprendedores con servicios de calidad.</p>
 </section>
 
-<div class="stats-container">
-<div class="stat-card">
-<div class="stat-value" id="online-servers">0</div>
-<div class="stat-label">Servidores Activos</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="total-users">0</div>
-<div class="stat-label">Usuarios Conectados</div>
-</div>
-</div>
-
 <section id="servidores" class="servers-section">
 <div class="section-header">
 <h2>Servidores Disponibles</h2>
-<input type="text" class="search-box" id="server-search" placeholder="Buscar servidores...">
+<input type="text" class="search-box" id="server-search" placeholder="Buscar servidores..." aria-label="Buscar servidores">
 </div>
 
 <div class="filter-container" id="category-filters">
@@ -563,7 +534,10 @@ async getServers() {
 const servers = [
 { id: 1, name: "TIENDA ONLINE DE ELECTRODOMESTICOS", url: "https://spoo.me/RmjWYL", status: "checking" },
 { id: 2, name: "SERVICIO DE SALON DE BELLEZA", url: "https://spoo.me/kWhQOB", status: "checking" },
-{ id: 3, name: "TIENDA ONLINE DE TODO UN POCO", url: "https://spoo.me/liWFXj", status: "checking" }
+{ id: 3, name: "TIENDA ONLINE DE TODO UN POCO", url: "https://spoo.me/liWFXj", status: "checking" },
+{ id: 4, name: "SERVICIO DE CARTEL TV", url: "https://carteltvsoporte.github.io/loading/", status: "checking" },
+{ id: 5, name: "SERVICIO DE SOJOLO CELL", url: "https://sojololite.github.io/cell/", status: "checking" },
+{ id: 6, name: "SERVICIO DE SOJOLO BUSINESS", url: "https://sojololite.github.io/business/", status: "checking" },
 ];
 
 return servers.map(server => {
@@ -575,13 +549,6 @@ category: category,
 description: description
 };
 });
-},
-
-async getStats() {
-return {
-onlineServers: 3,
-totalUsers: 1247
-};
 }
 };
 
@@ -589,18 +556,12 @@ const appState = {
 servers: [],
 filteredServers: [],
 categories: [],
-activeCategory: "all",
-stats: {
-onlineServers: 0,
-totalUsers: 0
-}
+activeCategory: "all"
 };
 
 const serversContainer = document.getElementById('servers-container');
 const serverSearch = document.getElementById('server-search');
 const categoryFilters = document.getElementById('category-filters');
-const onlineServersEl = document.getElementById('online-servers');
-const totalUsersEl = document.getElementById('total-users');
 
 function renderServers(servers) {
 serversContainer.innerHTML = '';
@@ -615,13 +576,14 @@ const serverCard = document.createElement('a');
 serverCard.href = server.url;
 serverCard.className = `server-card`;
 serverCard.target = '_blank';
-serverCard.rel = 'noopener';
+serverCard.rel = 'noopener noreferrer';
+serverCard.setAttribute('aria-label', `Ir a ${server.name}`);
 serverCard.innerHTML = `
 <span class="server-category">${server.category}</span>
 <h3>${server.name}</h3>
 <p class="server-description">${server.description}</p>
 <div class="server-status">
-<span class="status-dot ${server.status}"></span>
+<span class="status-dot ${server.status}" aria-hidden="true"></span>
 ${server.status === 'online' ? 'En línea' : server.status === 'offline' ? 'Desconectado' : 'Verificando...'}
 </div>
 `;
@@ -648,11 +610,6 @@ appState.filteredServers = filtered;
 renderServers(appState.filteredServers);
 }
 
-function updateStats(stats) {
-onlineServersEl.textContent = stats.onlineServers;
-totalUsersEl.textContent = stats.totalUsers.toLocaleString();
-}
-
 function generateCategoryFilters() {
 const categories = ["all", "tienda", "servicios"];
 appState.categories = categories;
@@ -665,10 +622,15 @@ filterBtn.className = `filter-btn ${category === "all" ? "active" : ""}`;
 filterBtn.textContent = category === "all" ? "Todos" : 
 category === "tienda" ? "Tiendas" : "Servicios";
 filterBtn.dataset.category = category;
+filterBtn.setAttribute('aria-pressed', category === "all");
 
 filterBtn.addEventListener('click', () => {
-document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+document.querySelectorAll('.filter-btn').forEach(btn => {
+btn.classList.remove('active');
+btn.setAttribute('aria-pressed', 'false');
+});
 filterBtn.classList.add('active');
+filterBtn.setAttribute('aria-pressed', 'true');
 appState.activeCategory = category;
 filterServers(serverSearch.value, category);
 });
@@ -690,6 +652,7 @@ lastChecked: verification.lastChecked
 return Promise.all(statusPromises);
 }
 
+// Mejoras de navegación y accesibilidad
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
@@ -698,9 +661,32 @@ const target = document.querySelector(targetId);
 if (target) {
 const offset = target.getBoundingClientRect().top + window.scrollY - 80;
 window.scrollTo({ top: offset, behavior: 'smooth' });
+// Enfocar el elemento destino para usuarios de teclado
+target.setAttribute('tabindex', '-1');
+target.focus();
+setTimeout(() => target.removeAttribute('tabindex'), 1000);
 }
 });
 });
+
+// Mejoras para SEO
+function addStructuredData() {
+const structuredData = {
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "KooPages",
+"url": window.location.href,
+"logo": "https://github.com/KOOWEXA/koopages/raw/refs/heads/main/KP.jpeg",
+"description": "Plataforma especializada en conectar emprendedores con servicios de calidad",
+"email": "koowexa@gmail.com",
+"sameAs": []
+};
+
+const script = document.createElement('script');
+script.type = 'application/ld+json';
+script.textContent = JSON.stringify(structuredData);
+document.head.appendChild(script);
+}
 
 async function init() {
 try {
@@ -714,8 +700,8 @@ appState.servers = await verifyServerStatus(appState.servers);
 appState.filteredServers = [...appState.servers];
 renderServers(appState.filteredServers);
 
-appState.stats = await kooPagesAPI.getStats();
-updateStats(appState.stats);
+// Añadir datos estructurados para SEO
+addStructuredData();
 
 } catch (error) {
 console.error('Error:', error);
@@ -724,6 +710,14 @@ console.error('Error:', error);
 
 serverSearch.addEventListener('input', (e) => {
 filterServers(e.target.value);
+});
+
+// Mejorar accesibilidad del buscador
+serverSearch.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+serverSearch.value = '';
+filterServers('');
+}
 });
 
 document.addEventListener('DOMContentLoaded', init);
