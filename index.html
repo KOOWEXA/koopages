@@ -17,12 +17,10 @@
 --light-bg: #f8fbff;
 --dark-text: #0f2b46;
 --text-muted: #666;
---border-radius: 16px;
---shadow: 0 8px 24px rgba(0,116,211,0.08);
+--border-radius: 12px;
+--shadow: 0 4px 12px rgba(0,116,211,0.08);
 --success: #27ae60;
 --danger: #e74c3c;
---title-color-1: #2c3e50; /* Primera tonalidad para el título */
---title-color-2: #3498db; /* Segunda tonalidad para el título */
 }
 
 * {
@@ -35,288 +33,167 @@ body {
 font-family: 'Segoe UI', system-ui, sans-serif;
 background: var(--light-bg);
 color: var(--dark-text);
-line-height: 1.6;
+line-height: 1.5;
 min-height: 100vh;
 }
 
 .app-container {
-max-width: 1200px;
+max-width: 100%;
 margin: 0 auto;
-padding: 0 1rem;
+padding: 0 0.5rem;
 }
 
 header {
 background: linear-gradient(135deg, var(--primary), var(--primary-dark));
 color: white;
-padding: 1.25rem 2rem;
+padding: 1rem;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 border-radius: 0 0 var(--border-radius) var(--border-radius);
 box-shadow: var(--shadow);
-position: sticky;
-top: 0;
-z-index: 100;
 }
 
 .logo-container {
 display: flex;
 align-items: center;
-gap: 1rem;
+gap: 0.75rem;
 }
 
 .logo-icon {
-width: 44px;
-height: 44px;
-border-radius: 8px;
+width: 36px;
+height: 36px;
+border-radius: 6px;
 }
 
 .logo-text {
-font-size: 1.8rem;
+font-size: 1.4rem;
 font-weight: 800;
 letter-spacing: -0.5px;
 }
 
-nav {
-display: flex;
-gap: 1.5rem;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-font-weight: 600;
-padding: 0.75rem 1.25rem;
-border-radius: 10px;
-font-size: 1rem;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-
-nav a::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background: white;
-transition: width 0.3s ease;
-}
-
-nav a:hover::after,
-nav a:focus::after {
-width: 100%;
-}
-
-nav a:focus {
-outline: 2px solid white;
-outline-offset: 2px;
-}
-
 main {
-padding: 2.5rem 0;
+padding: 1.5rem 0;
 }
 
 .hero {
 text-align: center;
-margin-bottom: 3rem;
-padding: 3rem 2rem;
+margin-bottom: 2rem;
+padding: 1.5rem 1rem;
 background: var(--card-bg);
 border-radius: var(--border-radius);
 box-shadow: var(--shadow);
-position: relative;
-overflow: hidden;
-}
-
-.hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 
 .hero h1 {
-font-size: 2.5rem;
-margin-bottom: 1.5rem;
-font-weight: 800;
-background: linear-gradient(90deg, var(--title-color-1), var(--title-color-2));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+font-size: 1.6rem;
+margin-bottom: 1rem;
+font-weight: 700;
+color: var(--primary);
 }
 
 .hero p {
-font-size: 1.2rem;
+font-size: 1rem;
 color: var(--text-muted);
-max-width: 800px;
-margin: 0 auto;
-line-height: 1.8;
+line-height: 1.5;
 }
 
 .servers-section {
-margin-bottom: 3rem;
+margin-bottom: 2rem;
 }
 
 .section-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 2rem;
-flex-wrap: wrap;
-gap: 1rem;
+margin-bottom: 1.5rem;
 }
 
 .section-header h2 {
-font-size: 1.8rem;
+font-size: 1.4rem;
 color: var(--primary);
 font-weight: 700;
-}
-
-.search-box {
-padding: 1rem 1.5rem;
-border: 2px solid #e1e8f0;
-border-radius: 12px;
-font-size: 1rem;
-width: 300px;
-transition: all 0.3s ease;
-background: var(--card-bg);
-}
-
-.search-box:focus {
-outline: none;
-border-color: var(--primary);
-box-shadow: 0 0 0 4px rgba(0,116,211,0.1);
+text-align: center;
 }
 
 .servers-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 2rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
 }
 
 .server-card {
 background: var(--card-bg);
 border-radius: var(--border-radius);
-padding: 2rem;
+padding: 1.5rem;
 text-decoration: none;
 color: inherit;
-display: flex;
-flex-direction: column;
-border: 2px solid transparent;
+border: 1px solid #e1e8f0;
 transition: all 0.3s ease;
 box-shadow: var(--shadow);
-position: relative;
-overflow: hidden;
 }
 
-.server-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: var(--primary);
-transform: scaleX(0);
-transition: transform 0.3s ease;
-}
-
-.server-card:hover,
-.server-card:focus {
-transform: translateY(-8px);
+.server-card:hover {
+transform: translateY(-4px);
 border-color: var(--primary);
-box-shadow: 0 16px 40px rgba(0,116,211,0.15);
-outline: none;
-}
-
-.server-card:hover::before,
-.server-card:focus::before {
-transform: scaleX(1);
+box-shadow: 0 8px 20px rgba(0,116,211,0.15);
 }
 
 .server-card h3 {
-font-size: 1.4rem;
+font-size: 1.2rem;
 margin-bottom: 1rem;
 color: var(--primary);
 font-weight: 700;
 }
 
-.server-description {
-font-size: 1rem;
-color: var(--text-muted);
-margin-bottom: 1.5rem;
-line-height: 1.6;
-flex-grow: 1;
+.articles-list {
+margin: 1rem 0;
 }
 
-.server-card .server-status {
+.article-item {
+padding: 0.75rem;
+margin-bottom: 0.5rem;
+background: var(--primary-light);
+border-radius: 8px;
+font-size: 0.9rem;
+border-left: 3px solid var(--primary);
+}
+
+.server-status {
 display: inline-flex;
 align-items: center;
 gap: 0.5rem;
 font-weight: 600;
+font-size: 0.9rem;
 }
 
-.server-card .status-dot {
-width: 12px;
-height: 12px;
+.status-dot {
+width: 10px;
+height: 10px;
 border-radius: 50%;
 }
 
-.server-card .status-dot.online {
+.status-dot.online {
 background-color: var(--success);
-box-shadow: 0 0 8px var(--success);
 }
 
-.server-card .status-dot.offline {
+.status-dot.offline {
 background-color: var(--danger);
 }
 
-.server-card .status-dot.checking {
+.status-dot.checking {
 background-color: #f39c12;
 animation: pulse 2s infinite;
 }
 
-.server-category {
-display: inline-block;
-padding: 0.5rem 1rem;
-background: var(--primary-light);
-color: var(--primary);
-border-radius: 20px;
-font-size: 0.85rem;
-font-weight: 700;
-margin-bottom: 1rem;
-align-self: flex-start;
-text-transform: uppercase;
-letter-spacing: 0.5px;
-}
-
 .contact-section {
 text-align: center;
-padding: 3rem 2rem;
+padding: 2rem 1rem;
 background: var(--card-bg);
 border-radius: var(--border-radius);
 box-shadow: var(--shadow);
-position: relative;
-}
-
-.contact-section::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 
 .contact-section h2 {
-font-size: 1.8rem;
-margin-bottom: 1.5rem;
+font-size: 1.4rem;
+margin-bottom: 1rem;
 color: var(--primary);
 font-weight: 700;
 }
@@ -329,169 +206,49 @@ margin-top: 1rem;
 display: inline-flex;
 align-items: center;
 gap: 0.5rem;
-font-size: 1.1rem;
+font-size: 1rem;
 transition: all 0.3s ease;
 padding: 0.75rem 1.5rem;
 border: 2px solid var(--primary);
-border-radius: 10px;
+border-radius: 8px;
 }
 
-.contact-link:hover,
-.contact-link:focus {
+.contact-link:hover {
 background: var(--primary);
 color: white;
 transform: translateY(-2px);
-outline: none;
-}
-
-.filter-container {
-display: flex;
-gap: 1rem;
-margin-bottom: 2rem;
-flex-wrap: wrap;
-}
-
-.filter-btn {
-padding: 0.75rem 1.5rem;
-background: var(--card-bg);
-border: 2px solid #e1e8f0;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.3s ease;
-font-weight: 600;
-color: var(--text-muted);
-}
-
-.filter-btn.active {
-background: var(--primary);
-color: white;
-border-color: var(--primary);
-}
-
-.filter-btn:hover:not(.active) {
-border-color: var(--primary);
-color: var(--primary);
-}
-
-.filter-btn:focus {
-outline: 2px solid var(--primary);
-outline-offset: 2px;
-}
-
-.skip-link {
-position: absolute;
-top: -40px;
-left: 6px;
-background: var(--primary);
-color: white;
-padding: 8px;
-text-decoration: none;
-border-radius: 4px;
-z-index: 1000;
-transition: top 0.3s;
-}
-
-.skip-link:focus {
-top: 6px;
 }
 
 @keyframes pulse {
 0%, 100% { opacity: 1; }
 50% { opacity: 0.6; }
 }
-
-@media (max-width: 768px) {
-header {
-flex-direction: column;
-gap: 1.5rem;
-padding: 1.5rem;
-}
-
-nav {
-width: 100%;
-justify-content: center;
-}
-
-.hero {
-padding: 2rem 1rem;
-}
-
-.hero h1 {
-font-size: 2rem;
-}
-
-.section-header {
-flex-direction: column;
-align-items: stretch;
-}
-
-.search-box {
-width: 100%;
-}
-
-.servers-grid {
-grid-template-columns: 1fr;
-}
-
-.filter-container {
-justify-content: center;
-}
-}
-
-@media (max-width: 480px) {
-.logo-text {
-font-size: 1.5rem;
-}
-
-nav a {
-padding: 0.5rem 1rem;
-font-size: 0.9rem;
-}
-
-.hero h1 {
-font-size: 1.8rem;
-}
-
-.server-card {
-padding: 1.5rem;
-}
-}
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <div class="app-container">
 <header>
 <div class="logo-container">
 <img class="logo-icon" src="https://github.com/KOOWEXA/koopages/raw/refs/heads/main/KP.jpeg" alt="Logo de KooPages">
 <div class="logo-text">KooPages</div>
 </div>
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#servidores">Servidores</a>
-<a href="#contacto">Contacto</a>
-</nav>
 </header>
 
-<main id="main-content">
-<section id="inicio" class="hero">
+<main>
+<section class="hero">
 <h1>Servidores Oficiales de KooPages</h1>
-<p>Accede a los negocios asociados de KooPages. Plataforma especializada en conectar emprendedores con servicios de calidad.</p>
+<p>Accede a los negocios asociados de KooPages</p>
 </section>
 
-<section id="servidores" class="servers-section">
+<section class="servers-section">
 <div class="section-header">
 <h2>Servidores Disponibles</h2>
-<input type="text" class="search-box" id="server-search" placeholder="Buscar servidores..." aria-label="Buscar servidores">
-</div>
-
-<div class="filter-container" id="category-filters">
 </div>
 
 <div class="servers-grid" id="servers-container"></div>
 </section>
 
-<section id="contacto" class="contact-section">
+<section class="contact-section">
 <h2>¿Necesitas ayuda?</h2>
 <p>Contáctanos directamente por correo electrónico:</p>
 <a href="mailto:koowexa@gmail.com" class="contact-link">koowexa@gmail.com</a>
@@ -500,79 +257,56 @@ padding: 1.5rem;
 </div>
 
 <script>
-const kooPagesAPI = {
-async verifyLink(url) {
-return new Promise((resolve) => {
-setTimeout(() => {
-const isValid = url && url !== "#";
-const status = isValid ? "online" : "offline";
-resolve({
-valid: isValid,
-status: status,
-lastChecked: new Date().toISOString()
-});
-}, 600);
-});
+const serversData = [
+{ 
+id: 1, 
+name: "ELECTRODOMESTICOS POR CANTIDAD", 
+url: "https://spoo.me/sv1", 
+status: "checking",
+articles: ["Refrigerador Samsung 500L", "Microondas Mabe 1.5pies"]
 },
-
-categorizeContent(name) {
-const lowerName = name.toLowerCase();
-if (lowerName.includes('tienda') || lowerName.includes('shop') || lowerName.includes('store')) {
-return "tienda";
-}
-return "servicios";
+{ 
+id: 2, 
+name: "ALY SALON DE BELLEZA", 
+url: "https://spoo.me/sv2", 
+status: "checking",
+articles: ["Corte y peinado profesional", "Tratamiento facial rejuvenecedor"]
 },
-
-generateDescription(name, category) {
-if (category === "tienda") {
-return `Tienda especializada en ${name}. Productos de calidad con entrega inmediata.`;
-}
-return `Servicios profesionales de ${name}. Soluciones personalizadas para tus necesidades.`;
+{ 
+id: 3, 
+name: "DE TODO UN POCO", 
+url: "https://spoo.me/sv3", 
+status: "checking",
+articles: ["Set de utensilios cocina", "Artículos deportivos varios"]
 },
-
-async getServers() {
-const servers = [
-{ id: 1, name: "TIENDA ONLINE DE ELECTRODOMESTICOS", url: "https://spoo.me/RmjWYL", status: "checking" },
-{ id: 2, name: "SERVICIO DE SALON DE BELLEZA", url: "https://spoo.me/kWhQOB", status: "checking" },
-{ id: 3, name: "TIENDA ONLINE DE TODO UN POCO", url: "https://spoo.me/liWFXj", status: "checking" },
-{ id: 4, name: "SERVICIO DE CARTEL TV", url: "https://carteltvsoporte.github.io/loading/", status: "checking" },
-{ id: 5, name: "SERVICIO DE SOJOLO CELL", url: "https://sojololite.github.io/cell/", status: "checking" },
-{ id: 6, name: "SERVICIO DE SOJOLO BUSINESS", url: "https://sojololite.github.io/business/", status: "checking" },
-{ id: 7, name: "SERVICIO DE CÁRNICOS HABANA", url: "https://spoo.me/yZOiz9f", status: "checking" },
+{ 
+id: 4, 
+name: "CÁRNICOS HABANA", 
+url: "https://spoo.me/sv4", 
+status: "checking",
+articles: ["Filete de res premium", "Embutidos artesanales"]
+},
+{ 
+id: 5, 
+name: "SURI NAILS", 
+url: "https://spoo.me/sv5", 
+status: "checking",
+articles: ["Uñas acrílicas diseño", "Decoración nail art"]
+},
+{ 
+id: 6, 
+name: "PROXIMAMENTE", 
+url: "https://spoo.me/sv6", 
+status: "checking",
+articles: ["Null", "Null"]
+},
 ];
 
-return servers.map(server => {
-const category = this.categorizeContent(server.name);
-const description = this.generateDescription(server.name, category);
-return {
-...server,
-category: category,
-description: description
-};
-});
-}
-};
-
-const appState = {
-servers: [],
-filteredServers: [],
-categories: [],
-activeCategory: "all"
-};
-
+function renderServers() {
 const serversContainer = document.getElementById('servers-container');
-const serverSearch = document.getElementById('server-search');
-const categoryFilters = document.getElementById('category-filters');
-
-function renderServers(servers) {
 serversContainer.innerHTML = '';
 
-if (servers.length === 0) {
-serversContainer.innerHTML = '<p style="text-align: center; grid-column: 1 / -1; padding: 2rem;">No se encontraron servidores.</p>';
-return;
-}
-
-servers.forEach(server => {
+serversData.forEach(server => {
 const serverCard = document.createElement('a');
 serverCard.href = server.url;
 serverCard.className = `server-card`;
@@ -580,9 +314,10 @@ serverCard.target = '_blank';
 serverCard.rel = 'noopener noreferrer';
 serverCard.setAttribute('aria-label', `Ir a ${server.name}`);
 serverCard.innerHTML = `
-<span class="server-category">${server.category}</span>
 <h3>${server.name}</h3>
-<p class="server-description">${server.description}</p>
+<div class="articles-list">
+${server.articles.map(article => `<div class="article-item">${article}</div>`).join('')}
+</div>
 <div class="server-status">
 <span class="status-dot ${server.status}" aria-hidden="true"></span>
 ${server.status === 'online' ? 'En línea' : server.status === 'offline' ? 'Desconectado' : 'Verificando...'}
@@ -593,135 +328,7 @@ serversContainer.appendChild(serverCard);
 });
 }
 
-function filterServers(searchTerm, category = appState.activeCategory) {
-let filtered = [...appState.servers];
-
-if (category !== "all") {
-filtered = filtered.filter(server => server.category === category);
-}
-
-if (searchTerm) {
-filtered = filtered.filter(server => 
-server.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-server.description.toLowerCase().includes(searchTerm.toLowerCase())
-);
-}
-
-appState.filteredServers = filtered;
-renderServers(appState.filteredServers);
-}
-
-function generateCategoryFilters() {
-const categories = ["all", "tienda", "servicios"];
-appState.categories = categories;
-
-categoryFilters.innerHTML = '';
-
-categories.forEach(category => {
-const filterBtn = document.createElement('button');
-filterBtn.className = `filter-btn ${category === "all" ? "active" : ""}`;
-filterBtn.textContent = category === "all" ? "Todos" : 
-category === "tienda" ? "Tiendas" : "Servicios";
-filterBtn.dataset.category = category;
-filterBtn.setAttribute('aria-pressed', category === "all");
-
-filterBtn.addEventListener('click', () => {
-document.querySelectorAll('.filter-btn').forEach(btn => {
-btn.classList.remove('active');
-btn.setAttribute('aria-pressed', 'false');
-});
-filterBtn.classList.add('active');
-filterBtn.setAttribute('aria-pressed', 'true');
-appState.activeCategory = category;
-filterServers(serverSearch.value, category);
-});
-
-categoryFilters.appendChild(filterBtn);
-});
-}
-
-async function verifyServerStatus(servers) {
-const statusPromises = servers.map(async server => {
-const verification = await kooPagesAPI.verifyLink(server.url);
-return {
-...server,
-status: verification.status,
-lastChecked: verification.lastChecked
-};
-});
-
-return Promise.all(statusPromises);
-}
-
-// Mejoras de navegación y accesibilidad
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-const target = document.querySelector(targetId);
-if (target) {
-const offset = target.getBoundingClientRect().top + window.scrollY - 80;
-window.scrollTo({ top: offset, behavior: 'smooth' });
-// Enfocar el elemento destino para usuarios de teclado
-target.setAttribute('tabindex', '-1');
-target.focus();
-setTimeout(() => target.removeAttribute('tabindex'), 1000);
-}
-});
-});
-
-// Mejoras para SEO
-function addStructuredData() {
-const structuredData = {
-"@context": "https://schema.org",
-"@type": "Organization",
-"name": "KooPages",
-"url": window.location.href,
-"logo": "https://github.com/KOOWEXA/koopages/raw/refs/heads/main/KP.jpeg",
-"description": "Plataforma especializada en conectar emprendedores con servicios de calidad",
-"email": "koowexa@gmail.com",
-"sameAs": []
-};
-
-const script = document.createElement('script');
-script.type = 'application/ld+json';
-script.textContent = JSON.stringify(structuredData);
-document.head.appendChild(script);
-}
-
-async function init() {
-try {
-appState.servers = await kooPagesAPI.getServers();
-appState.filteredServers = [...appState.servers];
-
-generateCategoryFilters();
-renderServers(appState.filteredServers);
-
-appState.servers = await verifyServerStatus(appState.servers);
-appState.filteredServers = [...appState.servers];
-renderServers(appState.filteredServers);
-
-// Añadir datos estructurados para SEO
-addStructuredData();
-
-} catch (error) {
-console.error('Error:', error);
-}
-}
-
-serverSearch.addEventListener('input', (e) => {
-filterServers(e.target.value);
-});
-
-// Mejorar accesibilidad del buscador
-serverSearch.addEventListener('keydown', (e) => {
-if (e.key === 'Escape') {
-serverSearch.value = '';
-filterServers('');
-}
-});
-
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', renderServers);
 </script>
 </body>
 </html>
